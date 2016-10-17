@@ -44,6 +44,7 @@ class ExercisesViewController: UIViewController,UITableViewDelegate,UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ExerciseCell", for: indexPath)
+        // TODO: Configure based on data model
         return cell
     }
 

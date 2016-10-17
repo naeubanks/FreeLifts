@@ -14,6 +14,7 @@
 		060DA98C1DB408DA0093DB65 /* ExercisesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060DA98B1DB408DA0093DB65 /* ExercisesViewController.swift */; };
 		062052711DB40B7A001E9596 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0620526F1DB40B7A001E9596 /* LaunchScreen.storyboard */; };
 		062052721DB40B7A001E9596 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 062052701DB40B7A001E9596 /* Main.storyboard */; };
+		063698A61DB484F900E928F9 /* ExerciseConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063698A51DB484F900E928F9 /* ExerciseConfigurationViewController.swift */; };
 		069B3A731DB2A64C00C79B4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069B3A721DB2A64C00C79B4F /* AppDelegate.swift */; };
 		069B3A7C1DB2A64C00C79B4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 069B3A7B1DB2A64C00C79B4F /* Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -26,6 +27,7 @@
 		060DA98B1DB408DA0093DB65 /* ExercisesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExercisesViewController.swift; path = FreeLifts/ExercisesViewController.swift; sourceTree = SOURCE_ROOT; };
 		0620526F1DB40B7A001E9596 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Storyboards/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		062052701DB40B7A001E9596 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Storyboards/Main.storyboard; sourceTree = "<group>"; };
+		063698A51DB484F900E928F9 /* ExerciseConfigurationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseConfigurationViewController.swift; sourceTree = "<group>"; };
 		069B3A6F1DB2A64C00C79B4F /* FreeLifts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreeLifts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		069B3A721DB2A64C00C79B4F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = FreeLifts/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		069B3A7B1DB2A64C00C79B4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = FreeLifts/Assets.xcassets; sourceTree = SOURCE_ROOT; };
@@ -48,6 +50,7 @@
 			children = (
 				060DA98B1DB408DA0093DB65 /* ExercisesViewController.swift */,
 				060DA93B1DB2E85A0093DB65 /* WorkoutsTableViewController.swift */,
+				063698A51DB484F900E928F9 /* ExerciseConfigurationViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				060DA98A1DB34FA00093DB65 /* ExerciseTableCellView.swift in Sources */,
+				063698A61DB484F900E928F9 /* ExerciseConfigurationViewController.swift in Sources */,
 				060DA9471DB3024A0093DB65 /* WorkoutDataModel.swift in Sources */,
 				060DA98C1DB408DA0093DB65 /* ExercisesViewController.swift in Sources */,
 				069B3A731DB2A64C00C79B4F /* AppDelegate.swift in Sources */,

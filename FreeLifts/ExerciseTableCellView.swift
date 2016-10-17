@@ -20,8 +20,6 @@ class ExerciseTableCellView: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        roundedSubView.layer.masksToBounds = true
-        roundedSubView.layer.cornerRadius = 10.0
     }
     
     @IBAction func repButtonTouchUp(_ sender: UIButton) {
