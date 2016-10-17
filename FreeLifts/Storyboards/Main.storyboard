@@ -145,22 +145,24 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OAK-xH-v3I">
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Squat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v9k-zC-rgK" userLabel="ExerciseName">
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="172" id="AyQ-OH-zW5"/>
-                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Xn-kg-QMa" userLabel="CurrentRepsWeight">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <state key="normal" title="5 x 5 190lb">
+                                                                <color key="titleColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </state>
+                                                        </button>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="awX-q8-Keg" userLabel="Set Buttons Stack">
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mDH-hs-EJ1" userLabel="RepButton1">
-                                                                    <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="54" id="i8l-PO-k3o"/>
                                                                         <constraint firstAttribute="width" constant="54" id="tWu-IY-VMa"/>
                                                                     </constraints>
-                                                                    <state key="normal" title="5">
+                                                                    <state key="normal">
                                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     </state>
                                                                     <userDefinedRuntimeAttributes>
@@ -175,14 +177,16 @@
                                                                             <color key="value" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                                                         </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
+                                                                    <connections>
+                                                                        <action selector="repButtonTouchUp:" destination="9QM-V3-Nln" eventType="touchUpInside" id="ukx-fi-Klb"/>
+                                                                    </connections>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3gf-h8-fX3" userLabel="RepButton2">
-                                                                    <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="54" id="ItZ-hN-0xN"/>
                                                                         <constraint firstAttribute="width" constant="54" id="nwK-2y-aH7"/>
                                                                     </constraints>
-                                                                    <state key="normal" title="5">
+                                                                    <state key="normal">
                                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     </state>
                                                                     <userDefinedRuntimeAttributes>
@@ -197,13 +201,16 @@
                                                                             <color key="value" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                                                         </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
+                                                                    <connections>
+                                                                        <action selector="repButtonTouchUp:" destination="9QM-V3-Nln" eventType="touchUpInside" id="fFn-tB-UB6"/>
+                                                                    </connections>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bm1-kn-GQx" userLabel="RepButton3">
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="54" id="Goj-u3-HwU"/>
                                                                         <constraint firstAttribute="width" constant="54" id="nvw-n5-VGR"/>
                                                                     </constraints>
-                                                                    <state key="normal" title="5">
+                                                                    <state key="normal">
                                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     </state>
                                                                     <userDefinedRuntimeAttributes>
@@ -218,13 +225,16 @@
                                                                             <color key="value" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                                                         </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
+                                                                    <connections>
+                                                                        <action selector="repButtonTouchUp:" destination="9QM-V3-Nln" eventType="touchUpInside" id="A3g-mk-C3i"/>
+                                                                    </connections>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ygd-kY-Pk0" userLabel="RepButton4">
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="54" id="E87-nW-b7q"/>
                                                                         <constraint firstAttribute="height" constant="54" id="nkL-sS-BFU"/>
                                                                     </constraints>
-                                                                    <state key="normal" title="5">
+                                                                    <state key="normal">
                                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     </state>
                                                                     <userDefinedRuntimeAttributes>
@@ -239,13 +249,16 @@
                                                                             <color key="value" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                                                         </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
+                                                                    <connections>
+                                                                        <action selector="repButtonTouchUp:" destination="9QM-V3-Nln" eventType="touchUpInside" id="DBt-Kd-8Ke"/>
+                                                                    </connections>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IE4-aG-Uos" userLabel="RepButton5">
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="54" id="tHf-z5-Q4o"/>
                                                                         <constraint firstAttribute="height" constant="54" id="yO7-VN-5j0"/>
                                                                     </constraints>
-                                                                    <state key="normal" title="5">
+                                                                    <state key="normal">
                                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     </state>
                                                                     <userDefinedRuntimeAttributes>
@@ -260,26 +273,26 @@
                                                                             <color key="value" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                                                         </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
+                                                                    <connections>
+                                                                        <action selector="repButtonTouchUp:" destination="9QM-V3-Nln" eventType="touchUpInside" id="dLE-zA-vIr"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                         </stackView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 x 5 190lb" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJF-rs-Eab" userLabel="CurrentRepsWeight">
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstItem="v9k-zC-rgK" firstAttribute="leading" secondItem="UJF-rs-Eab" secondAttribute="leading" id="ANe-hN-03p"/>
-                                                        <constraint firstAttribute="trailing" secondItem="UJF-rs-Eab" secondAttribute="trailing" constant="8" id="BHc-ch-agy"/>
+                                                        <constraint firstItem="8Xn-kg-QMa" firstAttribute="height" secondItem="v9k-zC-rgK" secondAttribute="height" id="39R-y0-ksH"/>
+                                                        <constraint firstItem="8Xn-kg-QMa" firstAttribute="width" secondItem="v9k-zC-rgK" secondAttribute="width" id="JDQ-zg-Dnr"/>
                                                         <constraint firstItem="awX-q8-Keg" firstAttribute="leading" secondItem="OAK-xH-v3I" secondAttribute="leading" constant="8" id="UUJ-5e-dL6"/>
-                                                        <constraint firstItem="awX-q8-Keg" firstAttribute="top" secondItem="UJF-rs-Eab" secondAttribute="bottom" constant="8" id="VAP-EY-7W1"/>
                                                         <constraint firstItem="v9k-zC-rgK" firstAttribute="leading" secondItem="OAK-xH-v3I" secondAttribute="leadingMargin" id="VSa-wg-Q4r"/>
-                                                        <constraint firstItem="UJF-rs-Eab" firstAttribute="top" secondItem="OAK-xH-v3I" secondAttribute="top" constant="8" id="aj5-z8-Q1y"/>
+                                                        <constraint firstItem="v9k-zC-rgK" firstAttribute="leading" secondItem="OAK-xH-v3I" secondAttribute="leading" constant="8" id="Y8y-H1-thn"/>
                                                         <constraint firstAttribute="bottom" secondItem="awX-q8-Keg" secondAttribute="bottom" constant="8" id="gJj-bT-gbH"/>
+                                                        <constraint firstItem="8Xn-kg-QMa" firstAttribute="baseline" secondItem="v9k-zC-rgK" secondAttribute="baseline" id="kjt-py-8f8"/>
+                                                        <constraint firstAttribute="trailing" secondItem="8Xn-kg-QMa" secondAttribute="trailing" constant="8" id="mDM-KG-mco"/>
+                                                        <constraint firstItem="8Xn-kg-QMa" firstAttribute="top" secondItem="OAK-xH-v3I" secondAttribute="top" constant="8" id="r1L-Gf-ZAf"/>
                                                         <constraint firstAttribute="trailing" secondItem="awX-q8-Keg" secondAttribute="trailing" constant="8" id="urH-7o-Ipr"/>
-                                                        <constraint firstItem="v9k-zC-rgK" firstAttribute="baseline" secondItem="UJF-rs-Eab" secondAttribute="baseline" id="yAy-rT-SOl"/>
+                                                        <constraint firstItem="v9k-zC-rgK" firstAttribute="top" secondItem="OAK-xH-v3I" secondAttribute="top" constant="8" id="wS6-ge-KGz"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -292,6 +305,11 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="repButton1" destination="mDH-hs-EJ1" id="50l-Ny-8lG"/>
+                                            <outlet property="repButton2" destination="3gf-h8-fX3" id="kpP-n2-0zb"/>
+                                            <outlet property="repButton3" destination="bm1-kn-GQx" id="90v-Dn-Wa1"/>
+                                            <outlet property="repButton4" destination="Ygd-kY-Pk0" id="Kyl-WA-m5C"/>
+                                            <outlet property="repButton5" destination="IE4-aG-Uos" id="xFX-X8-xSC"/>
                                             <outlet property="roundedSubView" destination="OAK-xH-v3I" id="KLK-Vs-rg2"/>
                                         </connections>
                                     </tableViewCell>
@@ -366,7 +384,7 @@
             <objects>
                 <navigationController id="Aoa-VB-ydY" userLabel="Workouts Navigation Root" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Workouts" image="first" id="k7f-86-GRW"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="SfK-pI-6Za">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="SfK-pI-6Za">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
