@@ -331,7 +331,7 @@
                                 </prototypes>
                                 <sections/>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qaL-eB-TUU">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qaL-eB-TUU" userLabel="Timer In Progress View" customClass="TimerInProgressView" customModule="FreeLifts" customModuleProvider="target">
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0  59" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s2f-1o-Any" userLabel="TimerLabel">
                                         <frame key="frameInset" minX="8" minY="22" width="65" height="26"/>
@@ -351,12 +351,19 @@
                                         <frame key="frameInset" minX="345" minY="24" width="22" height="22"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="onHide:" destination="qaL-eB-TUU" eventType="touchUpInside" id="SiC-CA-xOH"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="4Om-O6-Zpu"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="messageTextView" destination="VZ7-dJ-bPd" id="qbb-Qw-Dm5"/>
+                                    <outlet property="timerLabel" destination="s2f-1o-Any" id="4aM-GJ-hL9"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -370,6 +377,7 @@
                     <navigationItem key="navigationItem" title="Ongoing" id="ASL-r0-gdd"/>
                     <connections>
                         <outlet property="exerciseTable" destination="rsM-Vj-cmL" id="I90-s3-Pdm"/>
+                        <outlet property="timerInProgressView" destination="qaL-eB-TUU" id="YVd-Lf-xip"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>

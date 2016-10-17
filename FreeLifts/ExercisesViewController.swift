@@ -25,6 +25,8 @@ class ExercisesViewController: UIViewController,UITableViewDelegate,UITableViewD
 
     @IBOutlet weak var exerciseTable: UITableView!
     
+    @IBOutlet weak var timerInProgressView: TimerInProgressView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,6 +46,11 @@ class ExercisesViewController: UIViewController,UITableViewDelegate,UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ExerciseCell", for: indexPath)
+    
+        // Set the timer in progress view on the cell so that the cells can configure the timer.
+        let exerciseCell = cell as! ExerciseTableCellView
+        exerciseCell.timerInProgressView = timerInProgressView
+        
         // TODO: Configure based on data model
         return cell
     }
