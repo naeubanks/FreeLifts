@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11232" systemVersion="16A323" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Exercise" representedClassName="ExerciseSession" syncable="YES" codeGenerationType="class">
+        <attribute name="exerciseType" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" indexed="YES" syncable="YES"/>
+        <attribute name="numSets" attributeType="Integer 16" defaultValueString="5" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="repsPerSet" attributeType="Integer 16" defaultValueString="5" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="weight" attributeType="Double" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="sets" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Set" inverseName="exercise" inverseEntity="Set" syncable="YES"/>
+        <relationship name="workout" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Workout" inverseName="exercises" inverseEntity="Workout" syncable="YES"/>
+    </entity>
+    <entity name="Participant" representedClassName="Participant" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="currentWorkout" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Workout" inverseName="currentParticipant" inverseEntity="Workout" syncable="YES"/>
+        <relationship name="workouts" toMany="YES" deletionRule="Cascade" destinationEntity="Workout" inverseName="participant" inverseEntity="Workout" syncable="YES"/>
+    </entity>
+    <entity name="Set" syncable="YES">
+        <attribute name="repsCompleted" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="exercise" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Exercise" inverseName="sets" inverseEntity="Exercise" syncable="YES"/>
+    </entity>
+    <entity name="Workout" representedClassName="Workout" syncable="YES" codeGenerationType="class">
+        <attribute name="bodyweight" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="date" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="currentParticipant" maxCount="1" deletionRule="Nullify" destinationEntity="Participant" inverseName="currentWorkout" inverseEntity="Participant" syncable="YES"/>
+        <relationship name="exercises" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Exercise" inverseName="workout" inverseEntity="Exercise" syncable="YES"/>
+        <relationship name="participant" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Participant" inverseName="workouts" inverseEntity="Participant" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Workout" positionX="-272" positionY="-99" width="128" height="118"/>
+        <element name="Exercise" positionX="-45" positionY="-81" width="128" height="148"/>
+        <element name="Set" positionX="-144" positionY="-36" width="128" height="75"/>
+        <element name="Participant" positionX="-135" positionY="0" width="128" height="105"/>
+    </elements>
+</model>

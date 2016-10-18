@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		060DA93C1DB2E85A0093DB65 /* WorkoutsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060DA93B1DB2E85A0093DB65 /* WorkoutsTableViewController.swift */; };
 		060DA9401DB2ED810093DB65 /* WorkoutTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060DA93F1DB2ED810093DB65 /* WorkoutTableCellView.swift */; };
-		060DA9471DB3024A0093DB65 /* WorkoutDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060DA9461DB3024A0093DB65 /* WorkoutDataModel.swift */; };
 		060DA98A1DB34FA00093DB65 /* ExerciseTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060DA9891DB34FA00093DB65 /* ExerciseTableCellView.swift */; };
 		060DA98C1DB408DA0093DB65 /* ExercisesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060DA98B1DB408DA0093DB65 /* ExercisesViewController.swift */; };
 		062052711DB40B7A001E9596 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0620526F1DB40B7A001E9596 /* LaunchScreen.storyboard */; };
@@ -18,12 +17,13 @@
 		0685954C1DB59A2F00C40A74 /* TimerInProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0685954B1DB59A2F00C40A74 /* TimerInProgressView.swift */; };
 		069B3A731DB2A64C00C79B4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069B3A721DB2A64C00C79B4F /* AppDelegate.swift */; };
 		069B3A7C1DB2A64C00C79B4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 069B3A7B1DB2A64C00C79B4F /* Assets.xcassets */; };
+		06F36C7A1DB5A4EE007648C6 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 06F36C781DB5A4EE007648C6 /* DataModel.xcdatamodeld */; };
+		06F36CBE1DB5C415007648C6 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F36CBD1DB5C415007648C6 /* DataController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		060DA93B1DB2E85A0093DB65 /* WorkoutsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorkoutsTableViewController.swift; path = FreeLifts/WorkoutsTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		060DA93F1DB2ED810093DB65 /* WorkoutTableCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorkoutTableCellView.swift; path = FreeLifts/WorkoutTableCellView.swift; sourceTree = SOURCE_ROOT; };
-		060DA9461DB3024A0093DB65 /* WorkoutDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorkoutDataModel.swift; path = FreeLifts/WorkoutDataModel.swift; sourceTree = SOURCE_ROOT; };
 		060DA9891DB34FA00093DB65 /* ExerciseTableCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExerciseTableCellView.swift; path = FreeLifts/ExerciseTableCellView.swift; sourceTree = SOURCE_ROOT; };
 		060DA98B1DB408DA0093DB65 /* ExercisesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExercisesViewController.swift; path = FreeLifts/ExercisesViewController.swift; sourceTree = SOURCE_ROOT; };
 		0620526F1DB40B7A001E9596 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Storyboards/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -34,6 +34,8 @@
 		069B3A721DB2A64C00C79B4F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = FreeLifts/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		069B3A7B1DB2A64C00C79B4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = FreeLifts/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		069B3A801DB2A64C00C79B4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = FreeLifts/Info.plist; sourceTree = SOURCE_ROOT; };
+		06F36C791DB5A4EE007648C6 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		06F36CBD1DB5C415007648C6 /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +82,6 @@
 				060DA98D1DB408E80093DB65 /* ViewControllers */,
 				069B3AB21DB2C6C400C79B4F /* HelperViews */,
 				069B3A7B1DB2A64C00C79B4F /* Assets.xcassets */,
-				060DA9461DB3024A0093DB65 /* WorkoutDataModel.swift */,
 			);
 			path = FreeLifts;
 			sourceTree = "<group>";
@@ -92,6 +93,8 @@
 				062052701DB40B7A001E9596 /* Main.storyboard */,
 				069B3A721DB2A64C00C79B4F /* AppDelegate.swift */,
 				069B3A801DB2A64C00C79B4F /* Info.plist */,
+				06F36C781DB5A4EE007648C6 /* DataModel.xcdatamodeld */,
+				06F36CBD1DB5C415007648C6 /* DataController.swift */,
 			);
 			name = MainApplication;
 			sourceTree = "<group>";
@@ -180,9 +183,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				060DA98A1DB34FA00093DB65 /* ExerciseTableCellView.swift in Sources */,
+				06F36C7A1DB5A4EE007648C6 /* DataModel.xcdatamodeld in Sources */,
 				063698A61DB484F900E928F9 /* ExerciseConfigurationViewController.swift in Sources */,
-				060DA9471DB3024A0093DB65 /* WorkoutDataModel.swift in Sources */,
 				060DA98C1DB408DA0093DB65 /* ExercisesViewController.swift in Sources */,
+				06F36CBE1DB5C415007648C6 /* DataController.swift in Sources */,
 				0685954C1DB59A2F00C40A74 /* TimerInProgressView.swift in Sources */,
 				069B3A731DB2A64C00C79B4F /* AppDelegate.swift in Sources */,
 				060DA93C1DB2E85A0093DB65 /* WorkoutsTableViewController.swift in Sources */,
@@ -336,6 +340,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		06F36C781DB5A4EE007648C6 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				06F36C791DB5A4EE007648C6 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = 06F36C791DB5A4EE007648C6 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 069B3A671DB2A64C00C79B4F /* Project object */;
 }
