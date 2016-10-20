@@ -11,6 +11,8 @@ import CoreData
 class DataController : NSObject {
     
     // TODO: Replace fatal errors
+    var restTimerStart : Date?
+    var isLastSetSuccess : Bool = true
     
     func fetchActiveParticipant() -> Participant {
         do {

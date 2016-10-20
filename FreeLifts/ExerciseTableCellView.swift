@@ -16,6 +16,8 @@ class ExerciseTableCellView: UITableViewCell {
     @IBOutlet weak var repButton4: UIButton!
     @IBOutlet weak var repButton5: UIButton!
     
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
     var timerInProgressView : TimerInProgressView? = nil
     
     var targetReps = 5 // TODO: Based on data model
@@ -25,12 +27,16 @@ class ExerciseTableCellView: UITableViewCell {
     }
     
     @IBAction func repButtonTouchUp(_ sender: UIButton) {
+        // Reset the current rest timer
+        appDelegate.dataController.restTimerStart = nil
+        
         let text = sender.currentTitle
         if text == nil || text!.isEmpty {
             // Initial or reset state, set to target rep count
             sender.setTitle(String(targetReps), for: UIControlState.normal)
             sender.backgroundColor = #colorLiteral(red: 0, green: 0.3285208941, blue: 0.5748849511, alpha: 1) // TODO: Color from a constant
             
+            appDelegate.dataController.isLastSetSuccess = true
             timerInProgressView?.showAndStartTimer(success: true)
         } else if text == "0" {
             // Final state, reset back to initial
@@ -43,6 +49,7 @@ class ExerciseTableCellView: UITableViewCell {
             let repCount = Int(text!)
             sender.setTitle(String(repCount! - 1), for: UIControlState.normal)
             
+            appDelegate.dataController.isLastSetSuccess = false
             timerInProgressView?.showAndStartTimer(success: false)
         }
     }

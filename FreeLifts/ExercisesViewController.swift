@@ -27,11 +27,17 @@ class ExercisesViewController: UIViewController,UITableViewDelegate,UITableViewD
     
     @IBOutlet weak var timerInProgressView: TimerInProgressView!
     
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         exerciseTable.delegate = self
         exerciseTable.dataSource = self
+        
+        if (appDelegate.dataController.restTimerStart != nil) {
+            timerInProgressView.showAndStartTimer(success: appDelegate.dataController.isLastSetSuccess)
+        }
     }
 
     override func didReceiveMemoryWarning() {

@@ -12,12 +12,11 @@ class TimerInProgressView : UIView {
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var messageTextView: UITextView!
     
-    // TODO: Animations on show and hide
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
-    // TODO: Move the timer to global storage and hook up to applicationWillResignActive/applicationDidBecomeActive
-    // Update seconds in applicationDidBecomeActive to determine the correct value on suspend/resume scenarios
     var secondTimer : Timer?
-    var seconds = 0
+    
+    // TODO: Animations on show and hide
     
     let successMessage = "Congrats getting 5 reps! If it was easy, rest 90 sec. If not, 3 min."
     
@@ -26,12 +25,20 @@ class TimerInProgressView : UIView {
     func showAndStartTimer(success: Bool) {
         messageTextView.text = success ? successMessage : failureMessage
         
-        timerLabel.text = "0 00"
-        
         secondTimer?.invalidate()
-        seconds = 0
-        secondTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(addSecond), userInfo: nil, repeats: true)
         
+        if (appDelegate.dataController.restTimerStart == nil) {
+            appDelegate.dataController.restTimerStart = Date()
+        }
+        
+        updateTimer()
+        
+        secondTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+        
+        show()
+    }
+    
+    func show() {
         self.isHidden = false
     }
     
@@ -41,17 +48,22 @@ class TimerInProgressView : UIView {
     
     @IBAction func onHide(_ sender: UIButton) {
         hide()
+        stopTimer()
     }
     
-    func addSecond() {
-        seconds += 1
-        if seconds == 600 { // Stop timer at 10 minutes
-            secondTimer?.invalidate()
-            secondTimer = nil
+    func stopTimer() {
+        secondTimer?.invalidate()
+        appDelegate.dataController.restTimerStart = nil
+    }
+    
+    func updateTimer() {
+        let timeElapsed = -(appDelegate.dataController.restTimerStart!.timeIntervalSinceNow)
+        if timeElapsed == 600 { // Stop timer at 10 minutes
+            stopTimer()
         }
         
-        let minutes = Int(seconds / 60)
-        let remainder = Int(seconds % 60)
+        let minutes = Int(timeElapsed / 60)
+        let remainder = Int(timeElapsed) % 60
         var timerString = "\(minutes) "
         if (remainder < 10) {
             timerString += "0"
