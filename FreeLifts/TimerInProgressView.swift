@@ -57,6 +57,11 @@ class TimerInProgressView : UIView {
     }
     
     func updateTimer() {
+        if (appDelegate.dataController.restTimerStart == nil) {
+            timerLabel.text = "0 00"
+            return
+        }
+        
         let timeElapsed = -(appDelegate.dataController.restTimerStart!.timeIntervalSinceNow)
         if timeElapsed == 600 { // Stop timer at 10 minutes
             stopTimer()
