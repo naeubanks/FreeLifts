@@ -63,7 +63,7 @@ class TimerInProgressView : UIView {
         }
         
         let timeElapsed = -(appDelegate.dataController.restTimerStart!.timeIntervalSinceNow)
-        if timeElapsed == 600 { // Stop timer at 10 minutes
+        if timeElapsed >= 600 { // Stop timer at 10 minutes
             stopTimer()
         }
         

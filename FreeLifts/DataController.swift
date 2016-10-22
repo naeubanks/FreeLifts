@@ -28,6 +28,58 @@ class DataController : NSObject {
         return newParticipant
     }
     
+    enum ExerciseTypes : Int16 {
+        case squat = 0
+        case bench = 1
+        case row = 2
+        case overhead = 3
+        case deadlift = 4
+    }
+    
+    func createExercise(type: ExerciseTypes, sets: Int16 = 5, reps: Int16 = 5) -> Exercise {
+        let exercise = (NSEntityDescription.insertNewObject(forEntityName: "Exercise", into: persistentContainer.viewContext) as! Exercise)
+        exercise.repsPerSet = 5
+        exercise.numSets = 5
+        exercise.exerciseType = type.rawValue
+        
+        return exercise
+    }
+    
+    func createWorkoutSeries(series: Int16) -> Workout {
+        let newWorkout = (NSEntityDescription.insertNewObject(forEntityName: "Workout", into: persistentContainer.viewContext) as! Workout)
+        
+        // Squats every day
+        newWorkout.addToExercises(createExercise(type: ExerciseTypes.squat))
+        
+        // Series 0 is Workout A, Squat/Bench/Row
+        if (series == 0) {
+            newWorkout.addToExercises(createExercise(type: ExerciseTypes.bench))
+            newWorkout.addToExercises(createExercise(type: ExerciseTypes.row))
+        } else if (series == 1) {
+            newWorkout.addToExercises(createExercise(type: ExerciseTypes.overhead))
+            newWorkout.addToExercises(createExercise(type: ExerciseTypes.deadlift, sets: 1))
+        }
+        
+        return newWorkout
+    }
+    
+    
+    func fetchCurrentWorkout() -> Workout {
+        let currentParticipant = fetchActiveParticipant()
+        let currentWorkout = currentParticipant.currentWorkout
+        
+        if (currentWorkout == nil)
+        {
+            // Create a new workout in the series alternating from the last one
+            let previousWorkout : Workout? = (currentParticipant.workouts == nil) ? nil : (currentParticipant.workouts!.lastObject as! Workout)
+            let previousSeries = (previousWorkout == nil) ? 1 : previousWorkout!.series
+            
+            currentParticipant.currentWorkout = createWorkoutSeries(series: previousSeries == 0 ? 1 : 0)
+        }
+        
+        return currentWorkout!
+    }
+    
     func saveContext() {
         let context = persistentContainer.viewContext
         if context.hasChanges {

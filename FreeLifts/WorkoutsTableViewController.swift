@@ -41,12 +41,14 @@ class WorkoutsTableViewController: UITableViewController {
     
         if (indexPath.row == 0) {
             workoutCell.labelDate?.text = (participant.currentWorkout == nil) ? "Next" : "Ongoing"
-        } else {
-            let workout = participant.workouts?.allObjects[participant.workouts!.count - indexPath.row - 1] as! Workout
+        }
+        // TODO: Show recent workouts
+        /*else {
+            let workout = participant.workouts?.lastObject
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "E, MMM dd"
             workoutCell.labelDate?.text = dateFormatter.string(from: workout.date as! Date)
-        }
+        }*/
         
         return cell
     }
